@@ -1,4 +1,3 @@
-import sys
 from kaggle_environments import evaluate, make, utils
 from kaggle_environments.agent import get_last_callable
 env = make("connectx", debug=True)
@@ -11,3 +10,5 @@ def valide_agent(agent):
     return env.state[0].status == env.state[1].status == "DONE"
 def mean_reward(rewards):
     return sum(r[0] for r in rewards) / float(len(rewards))
+def battle(agent1, agent2, num_episodes=10):
+    return mean_reward(evaluate("connectx", [agent1, agent2], num_episodes=num_episodes))
