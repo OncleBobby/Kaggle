@@ -1,0 +1,3 @@
+kaggle-environments
+vec-noise
+pettingzoo
